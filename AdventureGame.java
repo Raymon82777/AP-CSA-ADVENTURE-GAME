@@ -160,7 +160,7 @@ public class AdventureGame {
         }
 
         scanner.close();
-        
+
         // Checkout
         System.out.println("\nYou approach the checkout counter.");
         if (hasTV) {
@@ -180,6 +180,8 @@ public class AdventureGame {
         System.out.println("Your final score: " + score);
 
         // Outcome
+
+        // Secret Ending
         if ((choice1 == 2) && (choice5 == 2) && (choice6 == 2) && (choice7 == 2) && (choice8 == 2)) {
             System.out.println("YOU ONLY PRESSED 2s! PUT IN SOME MORE EFFORT!");
                 System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
@@ -224,6 +226,8 @@ public class AdventureGame {
                 System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠤⢖⣖⡦⠼⠴⢤⣀⣷⣲⣤⡀⠀⠀⠀⠀⠀⢠⠞⢁⢤⡙⡟⣇⠀⢶⠟⡾⣷⣆⡈⢉⢳⣇⣬⠛⣿⡄⠀⠀⠀⠀");
                 System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠥⢽⡑⣠⢔⣒⡀⢀⡇⠀⢩⠉⢹⡇⠀⠀⠀⠀⠈⠛⠾⠟⠛⠛⠛⠷⠦⠤⣼⣃⣋⣼⣁⣀⡿⠭⠶⠿⠃⠀⠀⠀⠀");
                 System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠒⠒⠛⠙⠶⠤⠿⠟⠑⠶⠿⠽⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+
+                // normal endings
         }   else if (score >= 100) {
                 System.out.println("Congratulations! You had a successful shopping trip at Best Buy!");
             } else if (score >= 50) {
