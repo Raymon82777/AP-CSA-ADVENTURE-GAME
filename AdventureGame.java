@@ -25,16 +25,25 @@ public class AdventureGame {
         System.out.println("Welcome to the Best Buy Adventure Game!");
         System.out.println("Your goal is to navigate through the store, collect items, and score points.");
 
+        pause();
+        clearConsole();
+
         // Entrance
         System.out.println("\nYou enter Best Buy and see two sections ahead of you.");
         System.out.println("Do you go to the (1) Electronics or (2) Customer Service?");
         choice1 = scanner.nextInt();
+
+        pause();
+        clearConsole();
 
         // Electronics Section
         if (choice1 == 1) {
             System.out.println("\nYou head to the Electronics section and see a TV display.");
             System.out.println("Do you (1) pick up a TV or (2) walk past it?");
             choice2 = scanner.nextInt();
+
+            pause();
+            clearConsole();
 
             if (choice2 == 1) {
                 System.out.println("You pick up a TV! +40 points.");
@@ -43,6 +52,9 @@ public class AdventureGame {
             } else {
                 System.out.println("You decided not to pick up the TV.");
             }
+            
+            pause();
+            clearConsole();
 
             // Salesperson
             System.out.println("\nA salesperson approaches and insists on showing you high-end laptops.");
@@ -55,6 +67,9 @@ public class AdventureGame {
             } else {
                 System.out.println("They leave, and you save time. No change in points.");
             }
+
+            pause();
+            clearConsole();
 
             // Laptop Aisle
             System.out.println("\nYou see the laptop aisle next.");
@@ -69,12 +84,18 @@ public class AdventureGame {
                 System.out.println("You skip the laptop aisle.");
             }
 
+            pause();
+            clearConsole();
+
         // Customer Service 
         } else {
             System.out.println("\nYou approach the Customer Service desk.");
             System.out.println("The associate offers you a free phone case.");
             System.out.println("Do you (1) accept the case or (2) decline?");
             choice5 = scanner.nextInt();
+
+            pause();
+            clearConsole();
 
             if (choice5 == 1) {
                 System.out.println("You accepted the free phone case! +10 points.");
@@ -84,10 +105,16 @@ public class AdventureGame {
                 System.out.println("You decline the phone case.");
             }
 
+            pause();
+            clearConsole();
+
             // Security 
             System.out.println("\nA security guard notices you lingering and asks to see your bag.");
             System.out.println("Do you (1) cooperate or (2) argue?");
             choice6 = scanner.nextInt();
+
+            pause();
+            clearConsole();
 
             if (choice6 == 1) {
                 System.out.println("They check your bag and let you go. No points lost.");
@@ -96,10 +123,16 @@ public class AdventureGame {
                 score -= 30;
             }
 
+            pause();
+            clearConsole();
+
             // Headphones Aisle
             System.out.println("\nYou see the headphones aisle next.");
             System.out.println("Do you (1) pick up a pair of headphones or (2) skip it?");
             choice7 = scanner.nextInt();
+
+            pause();
+            clearConsole();
 
             if (choice7 == 1) {
                 System.out.println("You pick up a pair of headphones! +30 points.");
@@ -108,6 +141,9 @@ public class AdventureGame {
             } else {
                 System.out.println("You skip the headphones aisle.");
             }
+
+            pause();
+            clearConsole();
         }
 
         // :o ROBBERY??
@@ -115,9 +151,15 @@ public class AdventureGame {
         System.out.println("It’s a stranger. Do you (1) ignore them or (2) confront them?");
         choice8 = scanner.nextInt();
 
+        pause();
+        clearConsole();
+
         if (choice8 == 2) {
             System.out.println("The stranger distracts you and manages to swipe an item from your cart!");
             int robbedItem = (int)(Math.random() * 4); 
+
+            pause();
+            clearConsole();
 
             if (robbedItem == 0) {
                 if (hasTV) {
@@ -127,6 +169,10 @@ public class AdventureGame {
                 } else {
                     System.out.println("Luckily, they couldn’t find anything valuable.");
                 }
+
+                pause();
+                clearConsole();
+
             } else if (robbedItem == 1) {
                 if (hasLaptop) {
                     System.out.println("They stole your laptop! -35 points.");
@@ -135,6 +181,10 @@ public class AdventureGame {
                 } else {
                     System.out.println("Luckily, they couldn’t find anything valuable.");
                 }
+
+                pause();
+                clearConsole();
+
             } else if (robbedItem == 2) {
                 if (hasHeadphones) {
                     System.out.println("They stole your headphones! -30 points.");
@@ -143,6 +193,10 @@ public class AdventureGame {
                 } else {
                     System.out.println("Luckily, they couldn’t find anything valuable.");
                 }
+
+                pause();
+                clearConsole();
+
             }
         } else {
             System.out.println("You ignore the stranger, and they walk away.");
@@ -151,6 +205,10 @@ public class AdventureGame {
         // Surprise Inspection
         System.out.println("\nAs you head towards the checkout, you’re stopped by a store manager for a surprise inspection.");
         int inspection =  (int)(Math.random() * 2); 
+
+        pause();
+        clearConsole();
+
         if (inspection == 0) {
             System.out.println("The manager is pleased with your shopping choices. +10 points.");
             score += 35;
@@ -158,6 +216,9 @@ public class AdventureGame {
             System.out.println("The manager finds a misplaced item in your cart. -10 points.");
             score -= 35;
         }
+
+        pause();
+        clearConsole();
 
         scanner.close();
 
@@ -176,7 +237,14 @@ public class AdventureGame {
             score += 15;
         }
 
+        pause();
+        clearConsole();
+
         System.out.println("Checking out...");        
+
+        pause();
+        clearConsole();
+
         System.out.println("Your final score: " + score);
 
         // Outcome
@@ -234,6 +302,18 @@ public class AdventureGame {
                 System.out.println("Not bad, but you could’ve picked up more items.");
             } else {
                 System.out.println("It seems like your trip didn’t go very well. Better luck next time!");
+        }
+    }
+
+    public static void clearConsole() {
+        System.out.println("\033[H\033[2J");
+        System.out.flush();
+    }
+    public static void pause() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.err.println(e);
         }
     }
 }
